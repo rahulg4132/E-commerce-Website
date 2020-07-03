@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="assets/icons/favicon.jpg" type="image/gif/png" sizes="16x16|any">
+    <script src="https://kit.fontawesome.com/e2c3832431.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Market</title>
+</head>
+<body>    
+    <!--_____________________HEADER_______________________-->
+    <header>
+        <nav class="navbar navbar-expand fixed-top bg-warning">
+            <div class="container-fluid">
+                <!--Sidebar-->
+                <div id="mySidenav" class="sidenav">                    
+                    <a href="#" class="closebtnlogo">Market</a>
+                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>                    
+                    <a href="#" type="button" class="hns_login nouser" data-toggle="modal" data-target="#loginModal">Login</a>
+                    <a href="#" type="button" class="hns_signup nouser" data-toggle="modal" data-target="#signupModal">Signup</a>
+                    <!--Username-->
+                    <div class="block yesuser">
+                        <span>Hello, <b class="userdisp"></b></span>
+                    </div>                    
+                    <!--List-->
+                    <a href="#" class="yesuser">Profile</a>
+                    <a href="cart.html" class="yesuser">My Cart</a>
+                    <a type="submit" class="logout yesuser">Logout</a>
+                    <br>
+                    <div class="block">Information</div>
+                    <a href="#">About</a>
+                    <a href="#">Services</a>
+                    <a href="#">Contact</a>                    
+                </div>                
+                <div>
+                    <span style="font-size:25px; cursor:pointer;" onclick="openNav()"> &#9776;</span>
+                </div>
+                <!--LOGO and Brand-->
+                <div class="mx-2 px-2" class="hn_brand">
+                    <a class="hnb_logo" href="#">M</a>                
+                    <a class="hnb_bname" href="#">Market</a>
+                </div>
+                <!--Search box-->
+                <div class="input-group hn_src">
+                    <input type="text" class="form-control" placeholder="Search.." size="50">
+                    <div class="input-group-append">
+                        <button href="#" class="input-group-text"><img class="icon" src="assets/icons/mgicon.png"></button>
+                    </div>
+                </div>
+                <!--Username-->                
+                <div class="mx-2 yesuser dontdisp dropdown">
+                    <span>Hello, </span>
+                    <button class="btn-warning dropdown-toggle" type="button" data-toggle="dropdown"><b class="userdisp"></b><span class="caret"></span></button>
+                    <ul class="dropdown-menu" style="background-color: #FFF4CF; text-align:center;">
+                      <li><a href="#" style="color: black;">Profile</a></li>
+                      <li><a href="cart.html" style="color: black;">My Cart</a></li>
+                      <li><a href="#" class="logout" style="color: black;">Log Out</a></li>
+                    </ul>
+                </div>
+                <!--Login-->
+                <div class="pr-1 hn_login nouser">
+                    <button type="button" class="btn btn-light mr-1" data-toggle="modal" data-target="#loginModal">Login</button>
+                </div>
+                <!--Signup-->
+                <div class="pl-1 hn_signup nouser">
+                    <button href="#" class="btn btn-light ml-1" data-toggle="modal" data-target="#signupModal">Signup</button>
+                </div>                
+                <!--Cart-->
+                <div class="ml-2 yesuser">                    
+                    <span id="group"> 
+                        <a href="cart.html" style="font-size: 24px;color: inherit;"><img src="assets/icons/carticon.webp" width="30" height="30"></a> 
+                        <span class="badge badge-light"></span> 
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <!--_________________________MODAL for LOGIN_________________________-->
+        <div class="container">            
+            <!-- The Modal -->
+            <div class="modal fade" id="loginModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">                    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title px-3 text-muted">Login</h2>                    
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="loginform" class="px-3" method="post">
+                            <div class="hm_username pb-3">
+                                <label for="username">Email or Phone:</label><br>
+                                <input type="text" id="userlogin" class="modal_textbox px-2 py-1" name="username" value="" placeholder="market@gmail.com" required>
+                            </div>                            
+                            <div class="hm_password">
+                                <label for="password">Password:</label><br>
+                                <input type="password" id="pwdlogin" class="modal_textbox px-2 py-1" name="password" value="" placeholder="********" autocomplete="off" required>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button class="hm_loginbtn btn bg-warning" type="submit">Login</button>
+                            </div>
+                        </form>
+                    </div>                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer d-flex justify-content-center">
+                        <a href="#">Forgot Password?</a>
+                    </div>                    
+                    </div>
+                </div>
+            </div>            
+        </div>
+        <!--_________________________MODAL for SIGNUP_________________________-->
+        <div class="container">            
+            <!-- The Modal -->
+            <div class="modal fade" id="signupModal">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">                    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h2 class="modal-title px-3 text-muted">SignUp</h2>                    
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>                    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <form id="signupform" class="px-3" method="post" onsubmit="return signupcheck()">
+                            <div class="hm_name pb-3 d-inline-flex">
+                                <input type="text" id="fname" class="flex-fill px-2 py-1" name="fname" value="" placeholder="First Name" required>
+                                <input type="text" id="lname" class="flex-fill px-2 py-1" name="lname" value="" placeholder="Last Name" required>
+                            </div>
+                            <div class="hm_phone pb-3">
+                                <input type="number" id="phone" class="modal_textbox px-2 py-1" name="phone" value="" placeholder="Phone No." required>
+                            </div>
+                            <div class="hm_username pb-3">                                
+                                <input type="email" id="usersignup" class="modal_textbox px-2 py-1" name="username" value="" placeholder="market@gmail.com" required>
+                            </div>                            
+                            <div class="hm_password pb-3">                                
+                                <input type="password" id="pwdsignup" class="modal_textbox px-2 py-1" name="password" value="" placeholder="Password" autocomplete="off" minlength="8" required>
+                            </div>
+                            <div class="hm_password">                                
+                                <input type="password" id="pwdsignup2" class="modal_textbox px-2 py-1" name="password" value="" placeholder="Re-enter Password" autocomplete="off" minlength="8" required>
+                            </div>
+                            <br>
+                            <div class="d-flex justify-content-center">
+                                <button class="hm_signupbtn btn bg-warning" type="submit">SignUp</button>
+                            </div>
+                        </form>
+                    </div>                    
+                    <!-- Modal footer -->
+                    <div class="modal-footer d-flex justify-content-center">
+                        <p>Already a user? <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Login</a></p>
+                    </div>                    
+                    </div>
+                </div>
+            </div>            
+        </div>          
+    </header>
+    <!--_____________________SECTION_______________________-->
+    <section>        
+        <br>
+        <div class="btn-group d-flex flex-wrap s_btngrp">
+            <a href="index.html" class="btn btn-light">Home</a>
+            <a href="clothing.html" class="btn btn-light">Clothing</a>
+            <a href="books.html" class="btn btn-light">Books</a>
+            <a href="sports.html" class="btn btn-light">Sports</a>
+            <a href="electronics.html" class="btn btn-light">Electronics</a>
+        </div>       
+        <div class="row">
+            <!--_________________Filter__________________-->
+            <div class="col-sm-2" id="filters">
+                <h5 class="mt-2" style="text-align: center;">Filter</h5>
+                <div class="pl-4" style="font-size: large;background-color: #FFDF76;">Brand</div>
+                <div class="form-check ml-1">                    
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" name="brand" value="Arihant">Arihant
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="brand" value="Disha">Disha
+                    </label>                        
+                </div>
+                <br>
+                <div class="pl-4" style="font-size: large;background-color: #FFDF76;">Price</div>
+                <div class="form-check ml-1">                    
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input" name="price" value="p1">Rs 0-500
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="price" value="p2">Rs 500-1000
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="price" value="p3">Rs 1000-2000
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="price" value="p4">Rs 2000-5000
+                    </label><br>
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="price" value="p5">Rs 5000+
+                    </label>
+                </div>
+            </div>
+            <!--_________________Display Items__________________-->            
+            <div class="col-sm-10 dispbooks d-flex flex-wrap justify-content-center">
+                    
+            </div>            
+        </div>
+    </section>
+    <!--------------------------DETAILS--------------------->
+    <div class="dispdetails">
+        <br><br>
+        <button id="dispback" class="btn btn-warning">&#171; Back</button>
+        <div class="row">
+            <div class="col-sm-6 dimg d-flex justify-content-center">
+                
+            </div>
+            <div class="col-sm-6 ddet">
+
+            </div>
+        </div>
+    </div>
+    <!--_____________________FOOTER_______________________--> 
+    <footer>        
+    </footer>
+    <script src="func.js"></script>
+</body>
+</html>

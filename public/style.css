@@ -1,0 +1,183 @@
+*{
+    /*box-sizing:border-box;
+    border:solid black 1px;*/
+}
+body{
+    /*border: 3px solid black;*/
+    background-color: #FFF4CF;
+}
+.icon{
+    width: 24px;
+    height: 24px;
+}
+header{
+    margin-bottom: 50px;
+}
+.hn_src{
+    width: 700px !important;
+    margin: auto !important;
+}
+/*-------------------------------------For Login---------------*/
+.hm_loginbtn{   
+    width: 100%; 
+    color: white;
+    font-size: large;
+}
+.yesuser{
+    font-size: large;
+    align-items: center;
+}
+/*-------------------------------------For Signup---------------*/
+#signupform .hm_name{
+    width: 100%;
+}
+
+/*-------------------------------------For Sidebar-----------------*/
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #FFF4CF;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;    
+}
+.sidenav .block{
+    font-size: 22px;
+    padding: 0px 32px; 
+    background-color: #FFDF76;   
+}
+.sidenav a{
+    padding: 0px 32px;
+    text-decoration: none;    
+    font-size: 18px;    
+    color: black;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f0c91c;
+}
+
+.sidenav .closebtnlogo {
+    position: absolute;
+    top: 0;    
+    left: 0;
+    font-size: 36px;        
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;    
+    font-size: 36px;
+    right: 0;    
+}
+/*---------------------------------------------CAROUSEL-------*/
+section .sec_carousel{
+    width:100%;
+    height: 400px;
+}
+.sec_carousel img {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+}
+/*---------------------------------------------Button Groups-------*/
+.s_btngrp a{
+    background-color: #FFDF76;    
+    font-weight: bold;
+}
+/*---------------------------------------------Display Items-------*/
+.mycard{
+    width: 300px;
+    height: 310px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*-------------------CART---------------*/
+.eachitem>div{
+    border: black solid 2px;
+}
+
+/*-----------------------------------------------MEDIA QUERY*/
+@media only screen and (max-width: 600px){ /*Mobile-screen*/
+    .hnb_bname{
+        display:none;
+    }
+    .hn_login{
+        display:none;
+    }
+    .hn_signup{
+        display:none;
+    }
+    .modal_textbox{
+        width: 100%;
+    }    
+    .hm_name #fname{
+        width: 100%;
+    }
+    .hm_name #lname{
+        width: 100%;
+    }
+    .dontdisp{
+        display: none !important;
+    }
+    .dimg img{
+        width: 300px;
+        height: 300px;
+    }
+    /*-------------------------------CAROUSEL*/
+    section .sec_carousel{
+        width:100%;
+        height: 200px;
+    }
+    .sec_carousel img {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+    }
+    /*-------------------For User---------------*/
+    #group{
+        display: flex;
+    }
+    #group .badge { 
+        position: relative;         
+        left: -10px; 
+        top: -10px;
+        border: 1px solid black; 
+        border-radius: 50%; 
+        height: 22px;
+    }          
+    
+}
+@media only screen and (min-width: 600px){ /*Desktop-screen*/
+    .hns_login{
+        display:none;
+    }
+    .hns_signup{
+        display:none;
+    }
+    .modal_textbox{
+        width: 100%;
+    }   
+    /*-------------------For User---------------*/
+    #group .badge { 
+        position: relative; 
+        top: -20px; 
+        left: -25px; 
+        border: 1px solid black; 
+        border-radius: 50%; 
+    } 
+    #group a{ 
+        margin:10px;
+    }     
+}
+/*@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+*/
